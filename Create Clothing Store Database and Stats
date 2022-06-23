@@ -1,0 +1,32 @@
+--Create a Clothing Store Database with Stats
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, description TEXT, quantity INTEGER, price INTEGER, bundle TEXT);
+
+INSERT INTO store VALUES 
+(1, "Socks", 2, 4.99, "Yes"), 
+(2, "T-Shirt", 1, 14.99, "No"),
+(3, "Jeans", 1, 49.99, "No"),
+(4, "Leggings", 1, 24.99, "Yes"),
+(5, "Underwear", 4, 10.99, "Yes"),
+(6, "Skirt", 1, 8.99, "No"),
+(7, "Heels", 2, 34.99, "No"),
+(8, "Sneakers", 2, 79.99, "No"),
+(9, "Watch", 1, 150, "No"),
+(10, "Purse", 1, 39.99, "No"),
+(11, "Blouse", 1, 12.99, "Yes"),
+(12, "Lipstick", 1, 5.99, "Yes"),
+(13, "Rain Coat", 1, 59.99, "No"),
+(14, "Sweater", 1, 24.99, "Yes"),
+(15, "Hat", 1, 15.99, "Yes")
+;
+
+--display the database ordered by price, lowest to highest with name of each item and the price shown.
+SELECT description, price FROM store 
+ORDER BY price asc;
+
+--display the total SUM of the store if you buy each item
+SELECT SUM(price) FROM store;
+
+--display only items that can be bundled
+SELECT description FROM store 
+WHERE bundle = "Yes";
